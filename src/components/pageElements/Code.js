@@ -1,19 +1,14 @@
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/nightOwl'
-import React from 'react'
-import {
-  LiveEditor,
-  LiveError,
-  LivePreview,
-  LiveProvider,
-} from 'react-live'
-import styled from '@emotion/styled';
-import { copyToClipboard } from '../../utils/copy-to-clipboard'
+import Highlight, { defaultProps } from "prism-react-renderer";
+import theme from "prism-react-renderer/themes/nightOwl";
+import React from "react";
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
+import styled from "@emotion/styled";
+import { copyToClipboard } from "../../utils/copy-to-clipboard";
 
 const Pre = styled.pre`
   position: relative;
   text-align: left;
-  margin: 1em 0;
+  margin: 1em;
   padding: 0.5em;
   overflow-x: auto;
   border-radius: 3px;
@@ -22,15 +17,15 @@ const Pre = styled.pre`
     line-height: 1.3em;
     height: 1.3em;
   }
-  font-family: 'Courier New', Courier, monospace;
-`
+  font-family: "Courier New", Courier, monospace;
+`;
 
 const LineNo = styled.span`
   display: inline-block;
   width: 2em;
   user-select: none;
   opacity: 0.3;
-`
+`;
 
 const CopyCode = styled.button`
   position: absolute;
@@ -42,21 +37,21 @@ const CopyCode = styled.button`
   &:hover {
     opacity: 1;
   }
-`
+`;
 
 export const Code = ({ codeString, language, ...props }) => {
-  if (props['react-live']) {
+  if (props["react-live"]) {
     return (
       <LiveProvider code={codeString} theme={theme}>
         <LiveEditor />
         <LiveError />
         <LivePreview />
       </LiveProvider>
-    )
+    );
   }
   const handleClick = () => {
-    copyToClipboard(codeString)
-  }
+    copyToClipboard(codeString);
+  };
   return (
     <Highlight
       {...defaultProps}
@@ -64,13 +59,7 @@ export const Code = ({ codeString, language, ...props }) => {
       language={language}
       theme={theme}
     >
-      {({
-        className,
-        style,
-        tokens,
-        getLineProps,
-        getTokenProps,
-      }) => (
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Pre className={className} style={style}>
           <CopyCode onClick={handleClick}>Copy</CopyCode>
           {tokens.map((line, i) => (
@@ -84,5 +73,5 @@ export const Code = ({ codeString, language, ...props }) => {
         </Pre>
       )}
     </Highlight>
-  )
-}
+  );
+};

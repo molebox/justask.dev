@@ -1,12 +1,12 @@
-import { graphql, Link } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import React from 'react'
-import { Layout } from '../components/Layout'
+import { graphql, Link } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from "react";
+import { Layout } from "../components/Layout";
 
 export default ({ data, pageContext }) => {
-  const { frontmatter, body } = data.mdx
-  const { title, date, category } = frontmatter
-  const { previous, next } = pageContext
+  const { frontmatter, body } = data.mdx;
+  const { title, date, category } = frontmatter;
+  const { previous, next } = pageContext;
   return (
     <Layout>
       <h1>{title}</h1>
@@ -32,8 +32,8 @@ export default ({ data, pageContext }) => {
         </>
       )}
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query AnswerBySlug($slug: String!) {
@@ -50,4 +50,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

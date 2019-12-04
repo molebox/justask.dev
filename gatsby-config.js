@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
       title: 'justask.dev',
-      description: 'A website that provides answers to simple dev questions.'
+      description: 'There are no bad questions.'
     },
     plugins: [
         'gatsby-plugin-mdx',
@@ -9,9 +9,8 @@ module.exports = {
             resolve: 'gatsby-plugin-google-fonts',
             options: {
               fonts: [
-                'Josefin Sans',
-                'Poppins',
-                'Open Sans',
+                'Inconsolata',
+                'monospace',
                 'source sans pro\:300,400,400i,700' 
               ]
             }

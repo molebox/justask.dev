@@ -1,24 +1,15 @@
 ---
-title: Hello World - from MDX!
-date: 2019-06-01
+title: How to remove blue underline from link
+date: 2019-12-04
 published: true
 category: css
 ---
+import Blurb from '../../src/components/Blurb'
 
-# Test
+<Blurb>To remove the default blue underline from an anchor tag:</Blurb>
 
-## subtitle
+```html react-live
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<a href="somewhere-cool" style={{textDecoration: 'none'}}>I have no underline!</a>
 
-```jsx react-live
-import React from 'react'
-
-const Test = () => (
-  <div
-    <h1>Test</h1>
-  </div>
-)
-
-export default Test
 ```

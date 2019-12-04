@@ -7,9 +7,14 @@ export default {
   useCustomProperties: true,
   colors: {
     // these are the default colors
+    // https://www.color-hex.com/color-palette/3048
     white: "#FFFFFF",
     black: "#000000",
-    lightGrey: "#8d8d8d"
+    lightGrey: "#8d8d8d",
+    offYellow: "#fbbe5b",
+    softBlue: "#1e9ae0",
+    softRed: "#f46049",
+    greyBlack: "#202020"
 
     // modes: {
     // 	// this is the dark color mode colors
@@ -20,8 +25,8 @@ export default {
     // },
   },
   fonts: {
-    body: "Open Sans",
-    heading: "Poppins"
+    body: "monospace",
+    heading: "Inconsolata"
   },
   fontWeights: {
     body: 300,

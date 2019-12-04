@@ -1,19 +1,39 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { useSiteMetadata } from '../useSiteMetadata'
-import { Header } from './Header'
+/** @jsx jsx */
+import { jsx } from "../context";
+import styled from "@emotion/styled";
+import { useSiteMetadata } from "../useSiteMetadata";
+import { Header } from "./Header";
+import DefaultLayout from "./DefautLayout";
 
-const Center = styled.main`
-  max-width: 540px;
-  margin: 0 auto;
-`
+const Container = styled.div`
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 200px auto 300px;
+  grid-gap: 1em;
 
-export const Layout = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+  max-width: 1400px;
+  margin: 3em auto;
+  padding: 0 2em;
+  width: 100%;
+  height: 100vh;
+`;
+
+const Main = styled.main`
+  grid-column: 2;
+  // max-width: 540px;
+  // margin: 0 auto;
+`;
+
+export const Layout = ({ children, data }) => {
+  const { title, description } = useSiteMetadata();
   return (
-    <Center>
-      <Header siteTitle={title} siteDescription={description} />
-      {children}
-    </Center>
-  )
-}
+    <DefaultLayout>
+      <Container>
+        <Main>
+          <Header siteTitle={title} siteDescription={description} />
+          {children}
+        </Main>
+      </Container>
+    </DefaultLayout>
+  );
+};
