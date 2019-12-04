@@ -30,12 +30,14 @@
     "gatsby-plugin-mdx": "^1.0.59",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sitemap": "^2.2.22",
+    "gatsby-source-filesystem": "^2.1.40",
     "gatsby-theme-seo": "^1.0.1",
     "isolated-theme-ui": "^1.0.1",
     "mdx-utils": "^0.2.0",
     "prism-react-renderer": "^1.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-live": "^2.2.2",
     "theme-ui": "^0.2.49"
   },
   "devDependencies": {

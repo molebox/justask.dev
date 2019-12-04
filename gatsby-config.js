@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
-      title: 'justask.dev'
+      title: 'justask.dev',
+      description: 'A website that provides answers to simple dev questions.'
     },
     plugins: [
         'gatsby-plugin-mdx',
@@ -23,6 +24,41 @@ module.exports = {
                 author: 'Rich Haines',
                 siteUrl: 'https://justask.dev',
             }
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            name: 'pages',
+            path: `${__dirname}/src/pages/`
+          }
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/html`,
+            name: 'html',
+          },
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/css`,
+            name: 'css',
+          },
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/react`,
+            name: 'react',
+          },
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/gatsby`,
+            name: 'gatsby',
+          },
         },
         'gatsby-plugin-emotion',
         'gatsby-plugin-sitemap',
