@@ -15,6 +15,12 @@ const IntroText = styled.div`
 const Title = styled.h1`
   grid-row: 1;
   text-align: center;
+  font-size: 1.4em;
+
+  // Desktop
+  @media (min-width: 48em) {
+    font-size: 1.7em;
+  }
 `;
 
 const DateAndCategory = styled.div`

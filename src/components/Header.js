@@ -8,7 +8,7 @@ const Container = styled.header`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 2em;
+  margin: 2em;
 
   height: 5em;
 

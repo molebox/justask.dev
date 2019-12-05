@@ -13,6 +13,10 @@ const DefaultLayout = ({ children }) => (
 
         body {
           background-color: #fbbe5b;
+          scroll-behavior: smooth;
+          overflow-y: scroll;
+          -webkit-overflow-scrolling: touch;
+          overflow-x: hidden;
         }
       `}
     />
