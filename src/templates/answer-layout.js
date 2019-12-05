@@ -54,6 +54,7 @@ const Links = styled.div`
 `;
 
 const Navigation = styled(Link)`
+  color: #202020;
   &:hover {
     color: #f46049;
   }
