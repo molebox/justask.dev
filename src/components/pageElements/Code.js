@@ -1,6 +1,6 @@
+import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwl";
-import React from "react";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 import styled from "@emotion/styled";
 import { copyToClipboard } from "../../utils/copy-to-clipboard";
@@ -9,7 +9,7 @@ const Pre = styled.pre`
   position: relative;
   text-align: left;
   margin: 1em;
-  padding: 0.5em;
+  padding: 1.5em;
   overflow-x: auto;
   border-radius: 3px;
 
@@ -17,7 +17,8 @@ const Pre = styled.pre`
     line-height: 1.3em;
     height: 1.3em;
   }
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
+  font-size: 1.2em;
 `;
 
 const LineNo = styled.span`
@@ -30,10 +31,13 @@ const LineNo = styled.span`
 const CopyCode = styled.button`
   position: absolute;
   right: 0.25rem;
+  top: 0.5rem;
   border: 0;
   border-radius: 3px;
+  padding: 0.5em;
   margin: 0.25em;
   opacity: 0.3;
+  cursor: pointer;
   &:hover {
     opacity: 1;
   }

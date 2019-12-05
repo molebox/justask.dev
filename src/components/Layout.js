@@ -8,7 +8,7 @@ import DefaultLayout from "./DefautLayout";
 const Container = styled.div`
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: 200px auto 300px;
+  grid-template-columns: 1fr auto 1fr;
   grid-gap: 1em;
 
   max-width: 1400px;

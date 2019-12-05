@@ -3,7 +3,7 @@ import { jsx } from "../context";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 
-const Container = styled.div`
+const Container = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
