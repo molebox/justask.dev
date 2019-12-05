@@ -16,6 +16,8 @@ const Wrapper = styled.div`
   justify-content: flex-start;
 `;
 
-const PostWrapper = ({children}) => <Wrapper sx={{backgroundColor: "softRed"}}>{children}</Wrapper>;
+const PostWrapper = ({ children }) => (
+  <Wrapper sx={{ backgroundColor: "softRed" }}>{children}</Wrapper>
+);
 
 export default PostWrapper;

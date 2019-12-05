@@ -13,25 +13,44 @@ export default ({ data }) => {
       <IndexWrapper>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
           <PostWrapper key={id}>
-            <Link sx={{
-            textDecoration: "none"
-          }} to={fields.slug}>
-              <h1 sx={{
-                color: "greyBlack",
-                fontFamily: "body"
-              }}>{frontmatter.title}</h1>
-              <p sx={{
-                color: "greyBlack",
-                fontFamily: "body"
-              }}>{frontmatter.date}</p>
-              <p sx={{
-                color: "greyBlack",
-                fontFamily: "body"
-              }}>{frontmatter.category}</p>
-              <p sx={{
-                color: "greyBlack",
-                fontFamily: "body"
-              }}>{excerpt}</p>
+            <Link
+              sx={{
+                textDecoration: "none"
+              }}
+              to={fields.slug}
+            >
+              <h1
+                sx={{
+                  color: "greyBlack",
+                  fontFamily: "body"
+                }}
+              >
+                {frontmatter.title}
+              </h1>
+              <p
+                sx={{
+                  color: "greyBlack",
+                  fontFamily: "body"
+                }}
+              >
+                {frontmatter.date}
+              </p>
+              <p
+                sx={{
+                  color: "greyBlack",
+                  fontFamily: "body"
+                }}
+              >
+                {frontmatter.category}
+              </p>
+              <p
+                sx={{
+                  color: "greyBlack",
+                  fontFamily: "body"
+                }}
+              >
+                {excerpt}
+              </p>
             </Link>
           </PostWrapper>
         ))}

@@ -33,7 +33,7 @@ const CategoryBox = styled.div`
     & > h3 {
       font-size: 1.7em;
     }
-	}
+  }
 `;
 
 export default () => {
