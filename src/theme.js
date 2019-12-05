@@ -14,7 +14,9 @@ export default {
     offYellow: "#fbbe5b",
     softBlue: "#1e9ae0",
     softRed: "#f46049",
-    greyBlack: "#202020"
+    greyBlack: "#202020",
+
+    softRedDark: "#C84F3C"
 
     // modes: {
     // 	// this is the dark color mode colors

@@ -6,22 +6,23 @@ category: react
 ---
 import Text from '../../src/components/Text'
 
-<Text>TODO: This example isnt complete yet </Text>
+<Text>A basic example of how to use useState. Below is a live playground where you can edit the code.</Text>
 
 
 ```jsx react-live
 import React from 'react'
 
-const TestReact = () => {
-    const [myState, setMyState] = React.useState('This is my state');
+function useStateExample() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
 
-    return (
-        <>
-        <h1>{myState}</h1>
-        </>
-
-    )
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
 }
-
-export default TestReact
 ```

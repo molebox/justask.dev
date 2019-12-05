@@ -1,21 +1,35 @@
 /** @jsx jsx */
 import { jsx } from "../context";
 import { graphql, Link } from "gatsby";
-import styled from "@emotion/styled";
 import { Layout } from "../components/Layout";
 import PostWrapper from "../components/PostWrapper";
+import { AnswersIndexWrapper } from "../components/AnswersIndexWrapper";
+import SEO from "gatsby-theme-seo/src/components/seo";
 
-const IndexWrapper = styled.main`
-  display: grid;
-  grid-auto-rows: 150px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1em;
+const SEODescription = `
+  justask.dev is a website built for frontend developers. Its aim is the storing and categorizing of
+  answers to "simple" dev questions. This is the React section.
 `;
 
+const SEOKeywords = [
+  "Web Developer",
+  "Frontend Developer",
+  "React",
+  "Gatsby",
+  "GIT",
+  "JavaScript",
+  "CSS",
+  "HTML"
+];
 export default ({ data }) => {
   return (
     <Layout>
-      <IndexWrapper>
+      <SEO
+        title="justask.dev | React Answers"
+        description={SEODescription}
+        keywords={SEOKeywords}
+      />
+      <AnswersIndexWrapper>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
           <PostWrapper key={id}>
             <Link
@@ -59,7 +73,7 @@ export default ({ data }) => {
             </Link>
           </PostWrapper>
         ))}
-      </IndexWrapper>
+      </AnswersIndexWrapper>
     </Layout>
   );
 };

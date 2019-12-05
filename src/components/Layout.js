@@ -1,37 +1,40 @@
 /** @jsx jsx */
 import { jsx } from "../context";
+import React from "react";
 import styled from "@emotion/styled";
 import { useSiteMetadata } from "../useSiteMetadata";
 import { Header } from "./Header";
 import DefaultLayout from "./DefautLayout";
 
-const Container = styled.div`
-  display: grid;
-  grid-auto-rows: auto;
-  grid-template-columns: 1fr minmax(min-content, 1400px) 1fr;
-  grid-gap: 1em;
+const LayoutContainer = styled.div`
+  margin: 1em 1em;
+  height: 100%;
 
-  max-width: 1400px;
-  margin: 3em auto;
-  padding: 0 2em;
-  width: 100%;
-  height: 100vh;
-`;
+  // Desktop
+  @media (min-width: 48em) {
+    max-width: 1200px;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: minmax(min-content, 1200px);
+    grid-gap: 1em;
 
-const Main = styled.main`
-  grid-column: 2;
+    margin: 3em auto;
+    padding: 0 2em;
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 export const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <DefaultLayout>
-      <Container>
-        <Main>
+      <LayoutContainer>
+        <>
           <Header siteTitle={title} siteDescription={description} />
           {children}
-        </Main>
-      </Container>
+        </>
+      </LayoutContainer>
     </DefaultLayout>
   );
 };

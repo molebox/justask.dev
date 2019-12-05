@@ -13,9 +13,7 @@ const ParagraphText = styled.p`
 
   // Desktop
   @media (min-width: 48em) {
-    & {
-      font-size: 1.5em;
-    }
+    font-size: 1.5em;
   }
 `;
 

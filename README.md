@@ -14,13 +14,13 @@ To submit a PR:
 - Create a page in the pages folder with the following naming `myCategory-answers.js`
 - Copy paste the contents from one of the other pages and change the graphql query name to reflect the new category, and change the category filter to the new category.
 
-```
+```js
 export const query = graphql`
-  query MYNEWCATEGORY_INDEX_QUERY {
+  query MYCATEGORY_INDEX_QUERY {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { published: { eq: true }, category: { eq: "myNewCategory" } }
+        frontmatter: { published: { eq: true }, category: { eq: "myCategory" } }
       }
     ) {
       nodes {
@@ -42,28 +42,8 @@ export const query = graphql`
 ```
 - In the index.js, copy paste the last link and direct it to your new category page
 
-```
-        <Link
-          sx={{
-            textDecoration: "none"
-          }}
-          to="myNewCategory-answers"
-        >
-          <CategoryBox
-            sx={{
-              backgroundColor: "softRed"
-            }}
-          >
-            <h3
-              sx={{
-                color: "greyBlack",
-                fontFamily: "body"
-              }}
-            >
-              My New Category
-            </h3>
-          </CategoryBox>
-        </Link>
+```jsx
+ <PageLink page="myCategory-answers" title="My Category" />
 ```
 
 When you create a branch it would be great if you could use the question you are answering. :smiley:

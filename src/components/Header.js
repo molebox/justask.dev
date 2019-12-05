@@ -10,14 +10,17 @@ const Container = styled.header`
   align-items: center;
   margin: 2em;
 
-  height: 5em;
+  border-bottom: solid 2px #c84f3c;
+  padding: 1em;
+
+  height: 7em;
 
   & a > h1 {
     font-size: 1.5em;
   }
 
   & > h2 {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 
   // Desktop

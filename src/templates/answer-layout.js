@@ -15,22 +15,34 @@ const IntroText = styled.div`
 const Title = styled.h1`
   grid-row: 1;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.3em;
+  text-decoration: underline;
 
   // Desktop
   @media (min-width: 48em) {
-    font-size: 1.7em;
+    font-size: 1.5em;
+    text-decoration: underline;
   }
 `;
 
 const DateAndCategory = styled.div`
   grid-row: 2;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 
   & > p {
-    font-size: 1.2em;
+    font-size: 1em;
     text-transform: uppercase;
+  }
+
+  // Desktop
+  @media (min-width: 48em) {
+    align-items: center;
+    & > p {
+      font-size: 1.2em;
+      text-transform: uppercase;
+    }
   }
 `;
 
@@ -41,7 +53,7 @@ const Links = styled.div`
   margin-top: 2em;
 `;
 
-const PageLink = styled(Link)`
+const Navigation = styled(Link)`
   &:hover {
     color: #f46049;
   }
@@ -89,7 +101,7 @@ export default ({ data, pageContext }) => {
         {previous === false ? null : (
           <>
             {previous && (
-              <PageLink
+              <Navigation
                 sx={{
                   fontFamily: "heading",
                   fontWeight: "bold"
@@ -97,14 +109,14 @@ export default ({ data, pageContext }) => {
                 to={previous.fields.slug}
               >
                 <p>{previous.frontmatter.title}</p>
-              </PageLink>
+              </Navigation>
             )}
           </>
         )}
         {next === false ? null : (
           <>
             {next && (
-              <PageLink
+              <Navigation
                 sx={{
                   fontFamily: "heading",
                   fontWeight: "bold"
@@ -112,7 +124,7 @@ export default ({ data, pageContext }) => {
                 to={next.fields.slug}
               >
                 <p>{next.frontmatter.title}</p>
-              </PageLink>
+              </Navigation>
             )}
           </>
         )}
