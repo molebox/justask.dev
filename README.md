@@ -7,7 +7,7 @@ This being said, the answers here dont have to be mearly for what might seem lik
 To submit a PR:
 
 - Check if the category already exists in the content folder
-- If it does exist create your mdx file under that category and name it the question that will be answered. You can check the current mdx files/answers for an example of how to follow the structure, but it will go something like this:
+- If it does exist create your mdx file under that category and name it the question that will be answered. You can check the current mdx files/answers for an example of how to follow the structure
 - Try to keep the descriptions to the absolute minimum of what is required to understand the problem and provide the solution. This isnt a blog post!
 
 - If the category doesnt exist create a folder named after the new category in the content folder.
