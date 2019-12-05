@@ -59,6 +59,20 @@ module.exports = {
             name: 'gatsby',
           },
         },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/git`,
+            name: 'gatsby',
+          },
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/javascript`,
+            name: 'gatsby',
+          },
+        },
         'gatsby-plugin-emotion',
         'gatsby-plugin-sitemap',
         'gatsby-plugin-robots-txt'

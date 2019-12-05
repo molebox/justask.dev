@@ -16,7 +16,6 @@ const Categories = styled.div`
 `;
 
 const CategoryBox = styled.div`
-  background-color: 
   padding: 2em;
   display: flex;
   justify-content: center;
@@ -124,6 +123,48 @@ export default () => {
               }}
             >
               Gatsby
+            </h3>
+          </CategoryBox>
+        </Link>
+        <Link
+          sx={{
+            textDecoration: "none"
+          }}
+          to="git-answers"
+        >
+          <CategoryBox
+            sx={{
+              backgroundColor: "softRed"
+            }}
+          >
+            <h3
+              sx={{
+                color: "greyBlack",
+                fontFamily: "body"
+              }}
+            >
+              Git
+            </h3>
+          </CategoryBox>
+        </Link>
+        <Link
+          sx={{
+            textDecoration: "none"
+          }}
+          to="javascript-answers"
+        >
+          <CategoryBox
+            sx={{
+              backgroundColor: "softRed"
+            }}
+          >
+            <h3
+              sx={{
+                color: "greyBlack",
+                fontFamily: "body"
+              }}
+            >
+              JavaScript
             </h3>
           </CategoryBox>
         </Link>

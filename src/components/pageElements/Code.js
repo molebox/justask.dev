@@ -38,6 +38,7 @@ const CopyCode = styled.button`
   margin: 0.25em;
   opacity: 0.3;
   cursor: pointer;
+  font-family: monospace;
   &:hover {
     opacity: 1;
   }

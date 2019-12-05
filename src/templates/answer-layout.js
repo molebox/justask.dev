@@ -14,6 +14,7 @@ const IntroText = styled.div`
 
 const Title = styled.h1`
   grid-row: 1;
+  text-align: center;
 `;
 
 const DateAndCategory = styled.div`

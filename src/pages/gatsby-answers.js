@@ -1,11 +1,11 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "../context";
 import { graphql, Link } from "gatsby";
 import styled from "@emotion/styled";
 import { Layout } from "../components/Layout";
+import PostWrapper from "../components/PostWrapper";
 
 const IndexWrapper = styled.main``;
-
-const PostWrapper = styled.div``;
 
 export default ({ data }) => {
   return (
@@ -13,11 +13,25 @@ export default ({ data }) => {
       <IndexWrapper>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
           <PostWrapper key={id}>
-            <Link to={fields.slug}>
-              <h1>{frontmatter.title}</h1>
-              <p>{frontmatter.date}</p>
-              <p>{frontmatter.category}</p>
-              <p>{excerpt}</p>
+            <Link sx={{
+            textDecoration: "none"
+          }} to={fields.slug}>
+              <h1 sx={{
+                color: "greyBlack",
+                fontFamily: "body"
+              }}>{frontmatter.title}</h1>
+              <p sx={{
+                color: "greyBlack",
+                fontFamily: "body"
+              }}>{frontmatter.date}</p>
+              <p sx={{
+                color: "greyBlack",
+                fontFamily: "body"
+              }}>{frontmatter.category}</p>
+              <p sx={{
+                color: "greyBlack",
+                fontFamily: "body"
+              }}>{excerpt}</p>
             </Link>
           </PostWrapper>
         ))}

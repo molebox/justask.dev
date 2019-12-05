@@ -8,7 +8,7 @@ import DefaultLayout from "./DefautLayout";
 const Container = styled.div`
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr minmax(min-content, 1400px) 1fr;
   grid-gap: 1em;
 
   max-width: 1400px;
@@ -24,7 +24,17 @@ const Main = styled.main`
   // margin: 0 auto;
 `;
 
-export const Layout = ({ children, data }) => {
+const Introduction = styled.section`
+  grid-column: 1 / -1;
+
+  & > p {
+    overflow-wrap: break-word;
+    font-size: 2em;
+  }
+
+`;
+
+export const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <DefaultLayout>
@@ -33,6 +43,14 @@ export const Layout = ({ children, data }) => {
           <Header siteTitle={title} siteDescription={description} />
           {children}
         </Main>
+        <Introduction>
+          <p sx={{
+              color: "greyBlack",
+              fontFamily: "body"
+          }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </Introduction>
       </Container>
     </DefaultLayout>
   );

@@ -41,11 +41,11 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query CSS_INDEX_QUERY {
+  query GIT_INDEX_QUERY {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { published: { eq: true }, category: { eq: "css" } }
+        frontmatter: { published: { eq: true }, category: { eq: "git" } }
       }
     ) {
       nodes {
