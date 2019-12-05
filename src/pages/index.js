@@ -4,10 +4,6 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { Layout } from "../components/Layout";
 
-const IndexWrapper = styled.main``;
-
-const PostWrapper = styled.div``;
-
 const Categories = styled.div`
   display: grid;
   grid-auto-rows: 100px;
@@ -33,6 +29,23 @@ const CategoryBox = styled.div`
     & > h3 {
       font-size: 1.7em;
     }
+  }
+`;
+
+const Introduction = styled.section`
+  grid-column: 1 / -1;
+  margin-top: 1em;
+
+  & > p {
+    overflow-wrap: break-word;
+    font-size: 1.5em;
+    padding: 1em;
+  }
+
+  & > a {
+    overflow-wrap: break-word;
+    font-size: 1.5em;
+    padding: 1em;
   }
 `;
 
@@ -169,6 +182,51 @@ export default () => {
           </CategoryBox>
         </Link>
       </Categories>
+      <Introduction>
+          <p
+            sx={{
+              color: "greyBlack",
+              fontFamily: "body"
+            }}
+          >
+            The motivation behind this website is the storing and categorizing
+            of answers to "simple" dev questions. When i first started
+            programming it was often the simple things that i wanted to know,
+            like how to open a tab from a link. Or how to flattern a nested
+            array.
+          </p>
+          <p
+            sx={{
+              color: "greyBlack",
+              fontFamily: "body"
+            }}
+          >
+            This being said, the answers here dont have to be mearly for what
+            might seem like simple questions. If you have been googling for an
+            answer to a question and found it then please consider sharing it
+            here so that others might benifit. My hope is that this will grow
+            through contributions and become an easy place for devs to go to to
+            quickly check how to do stuff.
+          </p>
+          <p
+            sx={{
+              color: "greyBlack",
+              fontFamily: "body"
+            }}
+          >
+            To submit an answer please open a PR at:{" "}
+            <a
+              sx={{
+                color: "greyBlack",
+                fontFamily: "body",
+                color: "softBlue"
+              }}
+              href="https://github.com/molebox/justask.dev"
+            >
+              https://github.com/molebox/justask.dev
+            </a>
+          </p>
+        </Introduction>
     </Layout>
   );
 };

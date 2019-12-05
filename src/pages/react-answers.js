@@ -5,7 +5,12 @@ import styled from "@emotion/styled";
 import { Layout } from "../components/Layout";
 import PostWrapper from "../components/PostWrapper";
 
-const IndexWrapper = styled.main``;
+const IndexWrapper = styled.main`
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+`;
 
 export default ({ data }) => {
   return (

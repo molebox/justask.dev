@@ -6,8 +6,7 @@ category: javascript
 ---
 import Text from '../../src/components/Text'
 
-<Text>Two ways to flattern a nested array. </Text>
-<Text>The first is the more traditional approach using reduce and concat </Text>
+<Text>Two ways to flattern a nested array. he first is the more traditional approach using reduce and concat. </Text>
 
 ```js
 const myArray = [['1', '2', '3'], ['4', '5']];
@@ -16,8 +15,7 @@ const flatArray = myArray.reduce((total, amount) => total.concat(amount));
 
 ```
 
-<Text>The second uses the new flat() method - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat</a> </Text>
-<Text>As an argument you can pass in the depth </Text>
+<Text>The second uses the new flat() method. As an argument you can pass in the depth - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat</a> </Text>
 
 ```js
 const myFlatArray = [['1', '2', '3'], ['4', '5']].flat();

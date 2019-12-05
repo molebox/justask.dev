@@ -11,6 +11,24 @@ const Container = styled.header`
   margin-bottom: 2em;
 
   height: 5em;
+
+  & a > h1 {
+    font-size: 1.5em;
+  }
+
+  & > h2 {
+    font-size: 1.3em;
+  }
+
+  // Desktop
+  @media (min-width: 48em) {
+    & a > h1 {
+      font-size: 2em;
+    }
+    & > h2 {
+      font-size: 1.6em;
+    }
+  }
 `;
 
 export const Header = ({ siteTitle, siteDescription }) => (
