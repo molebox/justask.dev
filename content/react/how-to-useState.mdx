@@ -4,8 +4,9 @@ date: 2019-12-05
 published: true
 category: react
 ---
+import Text from '../../src/components/Text'
 
-# Test html
+<Text>TODO: This example isnt complete yet </Text>
 
 
 ```jsx react-live
@@ -15,7 +16,10 @@ const TestReact = () => {
     const [myState, setMyState] = React.useState('This is my state');
 
     return (
+        <>
         <h1>{myState}</h1>
+        </>
+
     )
 }
 

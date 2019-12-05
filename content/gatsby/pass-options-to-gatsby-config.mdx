@@ -4,18 +4,25 @@ date: 2019-12-05
 published: true
 category: gatsby
 ---
-import React from 'react'
+import Text from '../../src/components/Text'
 
-# Test gatsby
+<Text>To pass options to the gatsby-config.js </Text>
 
-```jsx 
-import React from 'react'
+```js
+module.exports = (options) => {
+    const {
+        lots,
+        and,
+        lots,
+        and,
+        lots,
+        of,
+        options
+    } = options;
 
-const TestGatsby = () => (
-  <div
-    <h1>Test</h1>
-  </div>
-)
+   return {
+    plugins: [...myplugins]
 
-export default TestGatsby
+
+  };
 ```
