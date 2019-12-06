@@ -46,6 +46,18 @@ export const query = graphql`
  <PageLink page="myCategory-answers" title="My Category" />
 ```
 
+- Add your new category to `gatsby-config.js`
+
+```js
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/myNewCategory`,
+            name: 'myNewCategory',
+          },
+        },
+```
+
 When you create a branch it would be great if you could use the question you are answering. :smiley:
 
 
