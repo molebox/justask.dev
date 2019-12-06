@@ -5,7 +5,6 @@ import { Layout } from "../components/Layout";
 import PostWrapper from "../components/PostWrapper";
 import { AnswersIndexWrapper } from "../components/AnswersIndexWrapper";
 import SEO from "gatsby-theme-seo/src/components/seo";
-import PageLink from "../components/PageLink";
 
 const SEODescription = `
   justask.dev is a website built for frontend developers. Its aim is the storing and categorizing of
@@ -32,7 +31,7 @@ export default ({ data }) => {
         keywords={SEOKeywords}
       />
       <AnswersIndexWrapper>
-        {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
+        {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
           <PostWrapper key={id}>
             <Link
               sx={{
@@ -64,14 +63,14 @@ export default ({ data }) => {
               >
                 {frontmatter.category}
               </p>
-              <p
+              {/* <p
                 sx={{
                   color: "greyBlack",
                   fontFamily: "body"
                 }}
               >
                 {excerpt}
-              </p>
+              </p> */}
             </Link>
           </PostWrapper>
         ))}

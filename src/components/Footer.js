@@ -3,23 +3,26 @@ import { jsx } from "../context";
 import styled from "@emotion/styled";
 
 const FooterContainer = styled.footer`
-    height: 6em;
+    height: 4em;
     padding: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c84f3c;
+    border-top: solid 2px #c84f3c;
     position: absolute;
     bottom: 0;
     margin 0 1em;
 
     & > p {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 
     // Desktop
     @media (min-width: 48em) {
         width: 100%;
+        & > p {
+          font-size: 1em;
+      }
     }
 `;
 

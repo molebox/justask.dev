@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
       title: 'justask.dev',
-      description: 'There are no bad questions.'
+      description: 'There are no bad questions'
     },
     plugins: [
         'gatsby-plugin-mdx',

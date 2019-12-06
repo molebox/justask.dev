@@ -10,17 +10,21 @@ const Wrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
   & > a > h1 {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   // Desktop
   @media (min-width: 48em) {
     & > a > h1 {
-      font-size: 1.7em;
+      font-size: 1.5em;
+    }
+
+    & > a > p {
+      padding-top: 0.5em;
     }
   }
 `;

@@ -9,7 +9,6 @@ import Footer from "./Footer";
 
 const LayoutContainer = styled.div`
   margin: 1em 1em;
-  height: 100%;
   position: relative;
   min-height: 100vh;
 
@@ -24,7 +23,7 @@ const LayoutContainer = styled.div`
     margin: 3em auto;
     padding: 0 2em;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
   }
 `;
 

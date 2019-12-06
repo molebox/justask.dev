@@ -60,7 +60,14 @@ const Navigation = styled(Link)`
   }
 
   & > p {
-    font-size: 1.2em;
+    font-size: 0.8em;
+  }
+
+  // Desktop
+  @media (min-width: 48em) {
+    & > p {
+      font-size: 1.2em;
+    }
   }
 `;
 
@@ -79,6 +86,16 @@ export default ({ data, pageContext }) => {
           {title}
         </Title>
         <DateAndCategory>
+          <Navigation
+            sx={{
+              fontFamily: "heading",
+              fontWeight: "bold",
+              textTransform: "uppercase"
+            }}
+            to={`${category}-answers`}
+          >
+            <p>Back</p>
+          </Navigation>
           <p
             sx={{
               fontFamily: "body",

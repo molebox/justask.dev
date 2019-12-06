@@ -63,14 +63,14 @@ export default ({ data }) => {
               >
                 {frontmatter.category}
               </p>
-              <p
+              {/* <p
                 sx={{
                   color: "greyBlack",
                   fontFamily: "body"
                 }}
               >
                 {excerpt}
-              </p>
+              </p> */}
             </Link>
           </PostWrapper>
         ))}

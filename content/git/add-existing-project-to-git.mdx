@@ -1,0 +1,25 @@
+---
+title: Add an existing project to git
+date: 2019-12-06
+published: true
+category: git
+---
+import Text from '../../src/components/Text'
+import ListItem from '../../src/components/ListItem'
+
+<Text>To start you should create a repository on your github. Then from your terminal move into your project root folder and run the following commands.</Text>
+
+```bash
+git init
+git add .
+git commit -m "My first commit"
+git remote add origin <remote repository url>
+git remote -v
+git push origin master
+```
+- <ListItem>First we are initializing the local directory as a git repo</ListItem>
+- <ListItem>Then we are adding the new files in your local repo, this stages them for the first commit</ListItem>
+- <ListItem>Then we commit the files that we just staged</ListItem>
+- <ListItem>Copy the remote repo url from your github repo and add it to the remote repo where your local repo will be published</ListItem>
+- <ListItem>Set the new remote</ListItem>
+- <ListItem>Push the changes in your local repo to github</ListItem>

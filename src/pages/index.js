@@ -30,7 +30,6 @@ const Categories = styled.div`
 `;
 
 const Introduction = styled.section`
-  // grid-column: 1 / -1;
   margin-top: 1em;
 
   & > p {
@@ -65,9 +64,7 @@ export default () => {
       <Introduction>
         <Paragraph>
           The motivation behind this website is the storing and categorizing of
-          answers to "simple" dev questions. When i first started programming it
-          was often the simple things that i wanted to know, like how to open a
-          tab from a link. Or how to flattern a nested array.
+          answers to "simple" dev questions.
         </Paragraph>
         <Paragraph>
           This being said, the answers here dont have to be mearly for what
