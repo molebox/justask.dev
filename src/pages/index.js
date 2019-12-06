@@ -49,7 +49,7 @@ export default () => {
   return (
     <Layout>
       <SEO
-        title="justask.dev"
+        title="A website that provides answers to simple dev questions"
         description={SEODescription}
         keywords={SEOKeywords}
       />

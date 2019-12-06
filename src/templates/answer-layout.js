@@ -28,6 +28,7 @@ const Title = styled.h1`
 const DateAndCategory = styled.div`
   grid-row: 2;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
@@ -38,7 +39,7 @@ const DateAndCategory = styled.div`
 
   // Desktop
   @media (min-width: 48em) {
-    align-items: center;
+    flex-direction: row;
     & > p {
       font-size: 1.2em;
       text-transform: uppercase;
@@ -66,7 +67,7 @@ const Navigation = styled(Link)`
   // Desktop
   @media (min-width: 48em) {
     & > p {
-      font-size: 1.2em;
+      font-size: 1em;
     }
   }
 `;
@@ -86,16 +87,6 @@ export default ({ data, pageContext }) => {
           {title}
         </Title>
         <DateAndCategory>
-          <Navigation
-            sx={{
-              fontFamily: "heading",
-              fontWeight: "bold",
-              textTransform: "uppercase"
-            }}
-            to={`${category}-answers`}
-          >
-            <p>Back</p>
-          </Navigation>
           <p
             sx={{
               fontFamily: "body",
@@ -112,6 +103,16 @@ export default ({ data, pageContext }) => {
           >
             category: {category}
           </p>
+          <Navigation
+            sx={{
+              fontFamily: "heading",
+              fontWeight: "bold",
+              textTransform: "uppercase"
+            }}
+            to={`${category}-answers`}
+          >
+            <p>Back</p>
+          </Navigation>
         </DateAndCategory>
       </IntroText>
       <MDXRenderer>{body}</MDXRenderer>

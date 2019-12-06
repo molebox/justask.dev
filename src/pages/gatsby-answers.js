@@ -26,7 +26,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="justask.dev | Gatsby Answers"
+        title="Gatsby Answers"
         description={SEODescription}
         keywords={SEOKeywords}
       />
