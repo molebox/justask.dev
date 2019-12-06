@@ -39,6 +39,24 @@ export const query = graphql`
   }
 `;
 
+- Then add your new category to the `AnswersHeader` component:
+
+```jsx
+export default ({ data }) => {
+  return (
+    <Layout>
+      <SEO
+        title="JavaScript Answers"
+        description={SEODescription}
+        keywords={SEOKeywords}
+      />
+      <AnswersHeader category="myCategory" />
+    ....
+    ....
+    ....
+
+```
+
 ```
 - In the index.js, copy paste the last link and direct it to your new category page
 

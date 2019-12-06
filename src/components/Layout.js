@@ -9,8 +9,6 @@ import Footer from "./Footer";
 
 const LayoutContainer = styled.div`
   margin: 1em 1em;
-  position: relative;
-  min-height: 100vh;
 
   // Desktop
   @media (min-width: 48em) {
@@ -20,15 +18,15 @@ const LayoutContainer = styled.div`
     grid-template-columns: minmax(min-content, 1200px);
     grid-gap: 1em;
 
-    margin: 3em auto;
+    margin: 0 auto;
     padding: 0 2em;
     width: 100%;
-    min-height: 100vh;
   }
 `;
 
 const MainContent = styled.div`
   padding-bottom: 6em;
+  flex: 1 0 auto;
 `;
 
 export const Layout = ({ children }) => {

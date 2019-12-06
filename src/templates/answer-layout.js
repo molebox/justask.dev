@@ -2,9 +2,10 @@
 import { jsx } from "../context";
 import React from "react";
 import styled from "@emotion/styled";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Layout } from "../components/Layout";
+import Navigation from "../components/Navigation";
 
 const IntroText = styled.div`
   display: grid;
@@ -16,12 +17,10 @@ const Title = styled.h1`
   grid-row: 1;
   text-align: center;
   font-size: 1.3em;
-  text-decoration: underline;
 
   // Desktop
   @media (min-width: 48em) {
     font-size: 1.5em;
-    text-decoration: underline;
   }
 `;
 
@@ -52,24 +51,6 @@ const Links = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-top: 2em;
-`;
-
-const Navigation = styled(Link)`
-  color: #202020;
-  &:hover {
-    color: #f46049;
-  }
-
-  & > p {
-    font-size: 0.8em;
-  }
-
-  // Desktop
-  @media (min-width: 48em) {
-    & > p {
-      font-size: 1em;
-    }
-  }
 `;
 
 export default ({ data, pageContext }) => {
@@ -103,16 +84,7 @@ export default ({ data, pageContext }) => {
           >
             category: {category}
           </p>
-          <Navigation
-            sx={{
-              fontFamily: "heading",
-              fontWeight: "bold",
-              textTransform: "uppercase"
-            }}
-            to={`${category}-answers`}
-          >
-            <p>Back</p>
-          </Navigation>
+          <Navigation destination={`${category}-answers`} text="Back" />
         </DateAndCategory>
       </IntroText>
       <MDXRenderer>{body}</MDXRenderer>

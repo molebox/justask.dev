@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 
   // Desktop
   @media (min-width: 48em) {
+    max-height: min-content;
     & > a > h1 {
       font-size: 1.5em;
     }
@@ -30,7 +31,16 @@ const Wrapper = styled.div`
 `;
 
 const PostWrapper = ({ children }) => (
-  <Wrapper sx={{ backgroundColor: "softRed" }}>{children}</Wrapper>
+  <Wrapper
+    sx={{
+      backgroundColor: "softRed",
+      ":hover": {
+        backgroundColor: "softRedDark"
+      }
+    }}
+  >
+    {children}
+  </Wrapper>
 );
 
 export default PostWrapper;

@@ -1,0 +1,25 @@
+---
+title: Sticky footer
+date: 2019-12-06
+published: true
+category: css
+---
+import Text from '../../src/components/Text'
+
+<Text>There are many ways to make a footer stick to the bottom of a page. The best way, in my opinion uses flexbox </Text>
+
+```css
+    html, body {
+    height: 100%;
+    }
+    body {
+    display: flex;
+    flex-direction: column;
+    }
+    .content {
+    flex: 1 0 auto;
+    }
+    .footer {
+    flex-shrink: 0;
+    }
+```

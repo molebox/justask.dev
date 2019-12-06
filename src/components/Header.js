@@ -20,7 +20,8 @@ const Container = styled.header`
   }
 
   & > h2 {
-    font-size: 1.1em;
+    font-size: 0.7em;
+    text-align: center;
   }
 
   // Desktop
@@ -29,7 +30,7 @@ const Container = styled.header`
       font-size: 2em;
     }
     & > h2 {
-      font-size: 1.6em;
+      font-size: 1.1em;
     }
   }
 `;
@@ -53,7 +54,7 @@ export const Header = ({ siteTitle, siteDescription }) => (
     </Link>
     <h2
       sx={{
-        fontFamily: "body",
+        fontFamily: "heading",
         color: "greyBlack"
       }}
     >

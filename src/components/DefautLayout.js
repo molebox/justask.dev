@@ -17,6 +17,8 @@ const DefaultLayout = ({ children }) => (
           overflow-y: scroll;
           -webkit-overflow-scrolling: touch;
           overflow-x: hidden;
+
+          height: 100%;
         }
       `}
     />
