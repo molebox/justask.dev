@@ -50,7 +50,7 @@ const Links = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 2em;
+  margin: 2em;
 `;
 
 export default ({ data, pageContext }) => {
@@ -87,20 +87,15 @@ export default ({ data, pageContext }) => {
           <Navigation destination={`${category}-answers`} text="Back" />
         </DateAndCategory>
       </IntroText>
-      <MDXRenderer>{body}</MDXRenderer>
+      <MDXRenderer sx={{ height: "100vh" }}>{body}</MDXRenderer>
       <Links>
         {previous === false ? null : (
           <>
             {previous && (
               <Navigation
-                sx={{
-                  fontFamily: "heading",
-                  fontWeight: "bold"
-                }}
-                to={previous.fields.slug}
-              >
-                <p>{previous.frontmatter.title}</p>
-              </Navigation>
+                destination={previous.fields.slug}
+                text={previous.frontmatter.title}
+              />
             )}
           </>
         )}
@@ -108,14 +103,9 @@ export default ({ data, pageContext }) => {
           <>
             {next && (
               <Navigation
-                sx={{
-                  fontFamily: "heading",
-                  fontWeight: "bold"
-                }}
-                to={next.fields.slug}
-              >
-                <p>{next.frontmatter.title}</p>
-              </Navigation>
+                destination={next.fields.slug}
+                text={next.frontmatter.title}
+              />
             )}
           </>
         )}

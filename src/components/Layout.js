@@ -19,13 +19,12 @@ const LayoutContainer = styled.div`
     grid-gap: 1em;
 
     margin: 0 auto;
-    padding: 0 2em;
     width: 100%;
   }
 `;
 
 const MainContent = styled.div`
-  padding-bottom: 6em;
+  height: 100%;
   flex: 1 0 auto;
 `;
 

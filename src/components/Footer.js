@@ -3,14 +3,13 @@ import { jsx } from "../context";
 import styled from "@emotion/styled";
 
 const FooterContainer = styled.footer`
-    height: 4em;
     padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-top: solid 2px #c84f3c;
-    margin 0 1em;
+    margin 2em 1em;
     flex-shrink: 0;
 
     & > p {
