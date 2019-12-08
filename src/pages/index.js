@@ -73,7 +73,7 @@ export default () => {
           goal of this site is growth through community contributions.
         </Paragraph>
         <Paragraph>
-          To submit an answer please open a PR at:
+          To contribute please open a PR at:
           <a
             sx={{
               color: "greyBlack",
