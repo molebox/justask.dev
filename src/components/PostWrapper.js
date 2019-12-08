@@ -13,18 +13,18 @@ const Wrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  & > a > h1 {
+  & > h1 {
     font-size: 1.2em;
   }
 
   // Desktop
   @media (min-width: 48em) {
     max-height: min-content;
-    & > a > h1 {
+    & > h1 {
       font-size: 1.5em;
     }
 
-    & > a > p {
+    & > p {
       padding-top: 0.5em;
     }
   }

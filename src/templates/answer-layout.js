@@ -90,24 +90,24 @@ export default ({ data, pageContext }) => {
       <MDXRenderer sx={{ height: "100vh" }}>{body}</MDXRenderer>
       <Links>
         {previous === false ? null : (
-          <>
+          <React.Fragment>
             {previous && (
               <Navigation
                 destination={previous.fields.slug}
                 text={previous.frontmatter.title}
               />
             )}
-          </>
+          </React.Fragment>
         )}
         {next === false ? null : (
-          <>
+          <React.Fragment>
             {next && (
               <Navigation
                 destination={next.fields.slug}
                 text={next.frontmatter.title}
               />
             )}
-          </>
+          </React.Fragment>
         )}
       </Links>
     </Layout>

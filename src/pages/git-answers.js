@@ -34,13 +34,14 @@ export default ({ data }) => {
       <AnswersHeader category="git" />
       <AnswersIndexWrapper>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
-          <PostWrapper key={id}>
-            <Link
-              sx={{
-                textDecoration: "none"
-              }}
-              to={fields.slug}
-            >
+          <Link
+            sx={{
+              textDecoration: "none"
+            }}
+            key={id}
+            to={fields.slug}
+          >
+            <PostWrapper>
               <h1
                 sx={{
                   color: "greyBlack",
@@ -65,16 +66,8 @@ export default ({ data }) => {
               >
                 {frontmatter.category}
               </p>
-              {/* <p
-                sx={{
-                  color: "greyBlack",
-                  fontFamily: "body"
-                }}
-              >
-                {excerpt}
-              </p> */}
-            </Link>
-          </PostWrapper>
+            </PostWrapper>
+          </Link>
         ))}
       </AnswersIndexWrapper>
     </Layout>

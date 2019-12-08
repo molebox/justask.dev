@@ -33,13 +33,13 @@ export const Layout = ({ children }) => {
   return (
     <DefaultLayout>
       <LayoutContainer>
-        <>
+        <React.Fragment>
           <MainContent>
             <Header siteTitle={title} siteDescription={description} />
             {children}
           </MainContent>
           <Footer />
-        </>
+        </React.Fragment>
       </LayoutContainer>
     </DefaultLayout>
   );
