@@ -63,14 +63,21 @@ module.exports = {
           resolve: 'gatsby-source-filesystem',
           options: {
             path: `${__dirname}/content/git`,
-            name: 'gatsby',
+            name: 'git',
           },
         },
         {
           resolve: 'gatsby-source-filesystem',
           options: {
             path: `${__dirname}/content/javascript`,
-            name: 'gatsby',
+            name: 'javascript',
+          },
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/typescript`,
+            name: 'typescript',
           },
         },
         'gatsby-plugin-emotion',

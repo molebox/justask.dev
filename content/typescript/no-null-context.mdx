@@ -1,0 +1,42 @@
+---
+title: Context without default value
+date: 2019-12-09
+published: true
+category: typescript
+---
+import Text from '../../src/components/Text'
+import React from 'react'
+
+<Text>A helper to create a context without the need for setting a default undefined value. This enables us to create our context and use it without checking it for undefined everywhere.</Text>
+
+
+```typescript
+    function useCreateNoNullContext<T>(contextName: string) {
+    const context = React.createContext<T | undefined>(undefined);
+
+    function useNoNullContext() {
+        const noNullContext = React.useContext(context);
+        if (!noNullContext) {
+        throw new Error(`${contextName} must be used inside a provider with a value`);
+        }
+        return noNullContext;
+    }
+    return [useNoNullContext, context.Provider] as const;
+    }
+```
+<Text>Example usage: </Text>
+
+```typescript
+    interface ContextValues {
+        isValue: boolean;
+        setValue: React.Dispatch<React.SetStateAction<boolean>>;
+    }
+
+    const [useContextValue, ContextValueProvider] = useCreateNoNullContext<ContextValues>('useContextValue');
+```
+<Text>useCreateNoNullContext returns a context hook and a provider. These can be named anything but the order is important
+as the first item is the context hook, while the second is the provider component. They can then be accessed like so: </Text>
+
+```typescript
+const {isValue, setValue} = useContextValue();
+```
