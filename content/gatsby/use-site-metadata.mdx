@@ -1,0 +1,30 @@
+---
+title: useSiteMetadata
+date: 2019-12-09
+published: true
+category: gatsby
+---
+import Text from '../../src/components/Text'
+
+<Text>No need to use the StaticQuery component anymore. Simplify things with this hook. </Text>
+
+```js
+import { useStaticQuery, graphql } from "gatsby";
+
+export const useSiteMetadata = () => {
+  const { site } = useStaticQuery(
+    graphql`
+      query SiteMetaData {
+        site {
+          siteMetadata {
+            title
+            description
+            ...allTheRest
+          }
+        }
+      }
+    `
+  );
+  return site.siteMetadata;
+};
+```

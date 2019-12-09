@@ -1,0 +1,38 @@
+---
+title: CSS reset in Gatsby with Emotion
+date: 2019-12-09
+published: true
+category: css-in-js
+---
+import Text from '../../src/components/Text'
+import React from "react";
+
+<Text>Super simple and really handy. Reset those pesky margins and borders with Emotions Global component.</Text>
+
+```jsx
+import React from "react";
+import { Global, css } from "@emotion/core";
+
+const CSSReset = ({ children }) => (
+  <>
+    <Global
+      styles={css`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          scroll-behavior: smooth;
+          overflow-y: scroll;
+          -webkit-overflow-scrolling: touch;
+        }
+      `}
+    />
+    {children}
+  </>
+);
+
+export default CSSReset;
+```

@@ -55,6 +55,7 @@ export default () => {
       />
       <Categories>
         <PageLink page="css-answers" title="CSS" />
+        <PageLink page="css-in-js-answers" title="CSS-in-JS" />
         <PageLink page="html-answers" title="HTML" />
         <PageLink page="react-answers" title="React" />
         <PageLink page="gatsby-answers" title="Gatsby" />

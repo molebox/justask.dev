@@ -1,0 +1,85 @@
+---
+title: Searchbar for MDX files
+date: 2019-12-09
+published: true
+category: gatsby
+---
+import Text from '../../src/components/Text'
+import React from "react";
+
+<Text>Used in this website, add a search bar to your site to help the user filter your posts or whatever. Influenced by <a href="https://www.aboutmonica.com/blog/create-gatsby-blog-search-tutorial">aboutmonica.com/blog/create-gatsby-blog-search-tutorial</a> This example uses Emotion  and Theme-Ui for styling. </Text>
+<Text>First we create our search bar hook to handle the logic</Text>
+
+```js
+import React from "react";
+
+export const useSearchBar = data => {
+  const allAnswers = data.allMdx.nodes;
+  const emptyQuery = "";
+  const [searchQuery, setSearchQuery] = React.useState({
+    filteredData: [],
+    query: emptyQuery
+  });
+
+  const handleSearchQuery = e => {
+    const query = e.target.value;
+
+    const answers = data.allMdx.nodes || [];
+
+    const filteredData = answers.filter(answer => {
+      const { title } = answer.frontmatter;
+      return title.toLowerCase().includes(query.toLowerCase());
+    });
+
+    setSearchQuery({ filteredData, query });
+  };
+
+  const { filteredData, query } = searchQuery;
+  const hasSearchResult = filteredData && query !== emptyQuery;
+  const answers = hasSearchResult ? filteredData : allAnswers;
+
+  return { answers, handleSearchQuery };
+};
+```
+<Text>Then we create our search bar which is just a styled input</Text>
+
+```jsx
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import styled from "@emotion/styled";
+
+const SearchBarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+`;
+
+const Input = styled.input`
+  padding: 0.4em;
+`;
+
+const SearchBar = ({handleSearchQuery}) => {
+  return (
+    <SearchBarContainer>
+      <Input
+        sx={{
+          color: "greyBlack",
+          fontFamily: "body"
+        }}
+        type="text"
+        id="my-id"
+        placeholder="Type to filter.."
+        onChange={handleSearchQuery}
+      />
+    </SearchBarContainer>
+  );
+};
+
+export default SearchBar;
+```
+<Text>Then we can inport it and use it: </Text>
+
+```jsx
+  <SearchBar handleSearchQuery={handleSearchQuery} />
+```

@@ -80,6 +80,13 @@ module.exports = {
             name: 'typescript',
           },
         },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/css-in-js`,
+            name: 'css-in-js',
+          },
+        },
         'gatsby-plugin-emotion',
         'gatsby-plugin-sitemap',
         'gatsby-plugin-robots-txt'
