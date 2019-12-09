@@ -81,5 +81,7 @@ export default SearchBar;
 <Text>Then we can inport it and use it: </Text>
 
 ```jsx
-  <SearchBar handleSearchQuery={handleSearchQuery} />
+    const { answers, handleSearchQuery } = useSearchBar(data);
+
+    <SearchBar handleSearchQuery={handleSearchQuery} />
 ```
