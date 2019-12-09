@@ -5,7 +5,8 @@ import { Layout } from "../components/Layout";
 import PostWrapper from "../components/PostWrapper";
 import { AnswersIndexWrapper } from "../components/AnswersIndexWrapper";
 import SEO from "gatsby-theme-seo/src/components/seo";
-import AnswersHeader from "../components/AnswersHeader";
+import { useSearchBar } from "../useSearchBar";
+import SearchBar from "../components/SearchBar";
 
 const SEODescription = `
   justask.dev is a website built for frontend developers. Its aim is the storing and categorizing of
@@ -24,6 +25,8 @@ const SEOKeywords = [
 ];
 
 export default ({ data }) => {
+  const { answers, handleSearchQuery } = useSearchBar(data);
+
   return (
     <Layout>
       <SEO
@@ -31,9 +34,10 @@ export default ({ data }) => {
         description={SEODescription}
         keywords={SEOKeywords}
       />
-      <AnswersHeader category="javascript" />
+      <SearchBar category="css" handleSearchQuery={handleSearchQuery} />
+      {/* <AnswersHeader category="javascript" /> */}
       <AnswersIndexWrapper>
-        {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
+        {answers.map(({ id, frontmatter, fields }) => (
           <Link
             sx={{
               textDecoration: "none"

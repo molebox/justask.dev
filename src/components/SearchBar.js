@@ -1,45 +1,33 @@
 /** @jsx jsx */
 import { jsx } from "../context";
-import React from "react";
 import styled from "@emotion/styled";
 
-const SearchInput = styled.input``;
+const SearchBarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+`;
 
-const SearchBar = ({ searchItems }) => {
-  const [searchTerms, setSearchTerms] = React.useState([]);
+const Input = styled.input`
+  padding: 0.4em;
+`;
 
-  React.useEffect(() => {
-    setSearchTerms([...searchItems]);
-  }, []);
-
-  React.useEffect(() => {
-    setSearchTerms([...searchItems]);
-  }, [searchItems]);
-
-  const handleSearchInput = e => {
-    let currentList = [];
-    let newList = [];
-
-    if (e.target.value !== "") {
-      currentList = searchItems;
-
-      newList = currentList.filter(item => {
-        const lower = item.toLowerCase();
-        const filter = e.target.value.toLowerCase();
-        return lower.includes(filter);
-      });
-    } else {
-      newList = searchItems;
-    }
-
-    setSearchTerms(newList);
-  };
-
+const SearchBar = ({ category, handleSearchQuery }) => {
   return (
-    <SearchInput
-      type="text"
-      placeholder="Search.."
-      onChange={handleSearchInput}
-    />
+    <SearchBarContainer>
+      <Input
+        sx={{
+          color: "greyBlack",
+          fontFamily: "body"
+        }}
+        type="text"
+        id={`${category}-answers`}
+        placeholder="Filter answers.."
+        onChange={handleSearchQuery}
+      />
+    </SearchBarContainer>
   );
 };
+
+export default SearchBar;
