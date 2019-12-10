@@ -21,8 +21,8 @@ export default {
     // modes: {
     // 	// this is the dark color mode colors
     // 	dark: {
-    // 		text: colors.orange,
-    // 		background: colors.text,
+    // 		text: "#f46049",
+    // 		background: "#202020",
     // 	},
     // },
   },

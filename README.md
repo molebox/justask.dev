@@ -40,7 +40,7 @@ export const query = graphql`
 `;
 ```
 
-- Then add your new category to the `AnswersHeader` component:
+<!-- - Then add your new category to the `AnswersHeader` component:
 
 ```jsx
 export default ({ data }) => {
@@ -55,7 +55,7 @@ export default ({ data }) => {
     ....
     ....
     ....
-```
+``` -->
 
 - In the index.js, copy paste the last link and direct it to your new category page
 

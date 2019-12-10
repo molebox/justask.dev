@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "../context";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { Layout } from "../components/Layout";
-import PostWrapper from "../components/PostWrapper";
-import { AnswersIndexWrapper } from "../components/AnswersIndexWrapper";
+import AnswersIndexWrapper from "../components/AnswersIndexWrapper";
 import SEO from "gatsby-theme-seo/src/components/seo";
 import { useSearchBar } from "../useSearchBar";
 import SearchBar from "../components/SearchBar";
+import PageTransition from "gatsby-plugin-page-transitions";
 
 const SEODescription = `
   justask.dev is a website built for frontend developers. Its aim is the storing and categorizing of
@@ -34,46 +34,11 @@ export default ({ data }) => {
         description={SEODescription}
         keywords={SEOKeywords}
       />
-      <SearchBar category="css" handleSearchQuery={handleSearchQuery} />
-      {/* <AnswersHeader category="javascript" /> */}
-      <AnswersIndexWrapper>
-        {answers.map(({ id, frontmatter, fields }) => (
-          <Link
-            sx={{
-              textDecoration: "none"
-            }}
-            key={id}
-            to={fields.slug}
-          >
-            <PostWrapper>
-              <h1
-                sx={{
-                  color: "greyBlack",
-                  fontFamily: "body"
-                }}
-              >
-                {frontmatter.title}
-              </h1>
-              <p
-                sx={{
-                  color: "greyBlack",
-                  fontFamily: "body"
-                }}
-              >
-                {frontmatter.date}
-              </p>
-              <p
-                sx={{
-                  color: "greyBlack",
-                  fontFamily: "body"
-                }}
-              >
-                {frontmatter.category}
-              </p>
-            </PostWrapper>
-          </Link>
-        ))}
-      </AnswersIndexWrapper>
+      <PageTransition>
+        <SearchBar category="css" handleSearchQuery={handleSearchQuery} />
+        {/* <AnswersHeader category="javascript" /> */}
+        <AnswersIndexWrapper answers={answers} />
+      </PageTransition>
     </Layout>
   );
 };

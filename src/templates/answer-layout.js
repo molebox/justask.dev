@@ -6,6 +6,7 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Layout } from "../components/Layout";
 import Navigation from "../components/Navigation";
+import PageTransition from "gatsby-plugin-page-transitions";
 
 const IntroText = styled.div`
   display: grid;
@@ -59,57 +60,59 @@ export default ({ data, pageContext }) => {
   const { previous, next } = pageContext;
   return (
     <Layout>
-      <IntroText>
-        <Title
-          sx={{
-            fontFamily: "heading"
-          }}
-        >
-          {title}
-        </Title>
-        <DateAndCategory>
-          <p
+      <PageTransition>
+        <IntroText>
+          <Title
             sx={{
-              fontFamily: "body",
-              fontWeight: "bold"
+              fontFamily: "heading"
             }}
           >
-            posted: {date}
-          </p>
-          <p
-            sx={{
-              fontFamily: "body",
-              fontWeight: "bold"
-            }}
-          >
-            category: {category}
-          </p>
-          <Navigation destination={`${category}-answers`} text="Back" />
-        </DateAndCategory>
-      </IntroText>
-      <MDXRenderer sx={{ height: "100vh" }}>{body}</MDXRenderer>
-      <Links>
-        {previous === false ? null : (
-          <React.Fragment>
-            {previous && (
-              <Navigation
-                destination={previous.fields.slug}
-                text={previous.frontmatter.title}
-              />
-            )}
-          </React.Fragment>
-        )}
-        {next === false ? null : (
-          <React.Fragment>
-            {next && (
-              <Navigation
-                destination={next.fields.slug}
-                text={next.frontmatter.title}
-              />
-            )}
-          </React.Fragment>
-        )}
-      </Links>
+            {title}
+          </Title>
+          <DateAndCategory>
+            <p
+              sx={{
+                fontFamily: "body",
+                fontWeight: "bold"
+              }}
+            >
+              posted: {date}
+            </p>
+            <p
+              sx={{
+                fontFamily: "body",
+                fontWeight: "bold"
+              }}
+            >
+              category: {category}
+            </p>
+            <Navigation destination={`${category}-answers`} text="Back" />
+          </DateAndCategory>
+        </IntroText>
+        <MDXRenderer sx={{ height: "100vh" }}>{body}</MDXRenderer>
+        <Links>
+          {previous === false ? null : (
+            <React.Fragment>
+              {previous && (
+                <Navigation
+                  destination={previous.fields.slug}
+                  text={previous.frontmatter.title}
+                />
+              )}
+            </React.Fragment>
+          )}
+          {next === false ? null : (
+            <React.Fragment>
+              {next && (
+                <Navigation
+                  destination={next.fields.slug}
+                  text={next.frontmatter.title}
+                />
+              )}
+            </React.Fragment>
+          )}
+        </Links>
+      </PageTransition>
     </Layout>
   );
 };

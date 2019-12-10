@@ -62,7 +62,36 @@ const Footer = () => (
         fontWeight: "bold"
       }}
     >
-      Powered by Gatsby & MDX
+      Powered by{" "}
+      <a
+        sx={{
+          fontFamily: "heading",
+          color: "greyBlack",
+          fontWeight: "bold",
+          textDecoration: "none",
+          ":hover": {
+            color: "softRed"
+          }
+        }}
+        href="https://www.gatsbyjs.org/"
+      >
+        Gatsby
+      </a>{" "}
+      &{" "}
+      <a
+        sx={{
+          fontFamily: "heading",
+          color: "greyBlack",
+          fontWeight: "bold",
+          textDecoration: "none",
+          ":hover": {
+            color: "softRed"
+          }
+        }}
+        href="https://mdxjs.com/"
+      >
+        MDX
+      </a>
     </p>
   </FooterContainer>
 );

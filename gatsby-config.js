@@ -87,6 +87,12 @@ module.exports = {
             name: 'css-in-js',
           },
         },
+        {
+          resolve: 'gatsby-plugin-page-transitions',
+          options: {
+            transitionTime: 400
+          }
+        },
         'gatsby-plugin-emotion',
         'gatsby-plugin-sitemap',
         'gatsby-plugin-robots-txt'
