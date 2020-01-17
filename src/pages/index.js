@@ -62,6 +62,7 @@ export default () => {
         <PageLink page="git-answers" title="Git" />
         <PageLink page="javascript-answers" title="JavaScript" />
         <PageLink page="typescript-answers" title="TypeScript" />
+        <PageLink page="vs-code-answers" title="VS-Code" />
       </Categories>
       <Introduction>
         <Paragraph>

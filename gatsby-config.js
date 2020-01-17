@@ -88,6 +88,13 @@ module.exports = {
           },
         },
         {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            path: `${__dirname}/content/vs-code`,
+            name: 'vs-code',
+          },
+        },
+        {
           resolve: 'gatsby-plugin-page-transitions',
           options: {
             transitionTime: 400
