@@ -61,5 +61,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+    createNodeField({
+      name: 'editLink',
+      node,
+      value: `https://github.com/molebox/justask.dev/edit/master${node.fileAbsolutePath.replace(
+        __dirname,
+        '',
+      )}`,
+    })
   }
 }
