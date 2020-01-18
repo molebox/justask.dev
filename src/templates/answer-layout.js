@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx } from "../context";
-import React from "react";
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import PageTransition from "gatsby-plugin-page-transitions";
+import React from "react";
 import { Layout } from "../components/Layout";
 import Navigation from "../components/Navigation";
-import PageTransition from "gatsby-plugin-page-transitions";
+import { jsx } from "../context";
 
 const IntroText = styled.div`
   display: grid;
@@ -55,7 +55,11 @@ const Links = styled.div`
 `;
 
 export default ({ data, pageContext }) => {
-  const { frontmatter, body } = data.mdx;
+  const {
+    frontmatter,
+    body,
+    fields: { editLink }
+  } = data.mdx;
   const { title, date, category } = frontmatter;
   const { previous, next } = pageContext;
   return (
@@ -89,6 +93,20 @@ export default ({ data, pageContext }) => {
             <Navigation destination={`${category}-answers`} text="Back" />
           </DateAndCategory>
         </IntroText>
+        <a
+          sx={{
+            fontFamily: "body",
+            color: "greyBlack",
+            ":hover": {
+              backgroundColor: "softRedDark"
+            }
+          }}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={editLink}
+        >
+          Edit this post on GitHub.
+        </a>
         <MDXRenderer sx={{ height: "100vh" }}>{body}</MDXRenderer>
         <Links>
           {previous === false ? null : (
@@ -129,6 +147,7 @@ export const query = graphql`
       excerpt
       fields {
         slug
+        editLink
       }
     }
   }
