@@ -90,15 +90,13 @@ export default ({ data, pageContext }) => {
             >
               category: {category}
             </p>
-            <Navigation destination={`${category}-answers`} text="Back" />
-          </DateAndCategory>
-        </IntroText>
-        <a
+            <a
           sx={{
             fontFamily: "body",
             color: "greyBlack",
+            fontWeight: "bold",
             ":hover": {
-              backgroundColor: "softRedDark"
+              color: "softRedDark"
             }
           }}
           target="_blank"
@@ -107,6 +105,9 @@ export default ({ data, pageContext }) => {
         >
           Edit this post on GitHub.
         </a>
+        <Navigation destination={`${category}-answers`} text="Back" />
+          </DateAndCategory>
+        </IntroText>
         <MDXRenderer sx={{ height: "100vh" }}>{body}</MDXRenderer>
         <Links>
           {previous === false ? null : (
