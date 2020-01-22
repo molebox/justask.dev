@@ -1,0 +1,57 @@
+---
+title: Change page url path based on theme options
+date: 2020-01-22
+published: true
+category: gatsby
+---
+import Text from '../../src/components/Text'
+
+<Text>When creating themes we can ship with our page paths set, but sometimes we want to give the user the option to change that path. 
+    For example, if we had a path that was awesomePage but our theme consumer wanted to change that to myPage, then we can access the 
+    users choice via the options they pass into our theme.  </Text>
+
+<Text>In our gatsby-node.js file we can take advantage of the createPages function and access the plugin options. From there we can 
+    run a check to see if the user passed in a custom url, if they did we can create that page based off of our original page, thus
+    replacing the original pages path. </Text>
+
+<Text>The user consuming our theme would do something like this: </Text>
+
+```js
+module.exports = {
+    plugins: [
+        {
+        resolve: 'gatsby-theme-boop',
+        options: {
+          customUrl: 'myPage',
+
+        }
+    ]
+}
+```
+
+<Text>Then in our themes gatsby-config.js file we can accept the option: </Text>
+
+```js
+module.exports = (options) => {
+    const {
+        customUrl
+    } = options;
+    plugins: [...]
+}
+```
+
+<Text>Then in our gatsby-node.js file we can use the createPages function and check if the theme consumer passed in the option: </Text>
+
+```js
+exports.createPages = async ({ actions: { createPage } }, pluginOptions) => {
+
+    if (pluginOptions.customUrl) {
+        createPage({
+            path: `/${pluginOptions.customUrl}/`,
+            component: require.resolve('./src/templates/awesomePage.js')
+        })
+    }
+  }
+```
+
+<Text>The consumer of the theme would then be able to access the page from /myPage instead of /awesomePage </Text>
