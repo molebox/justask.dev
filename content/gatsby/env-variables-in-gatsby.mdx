@@ -1,0 +1,54 @@
+---
+title: Environment variables in Gatsby
+date: 2020-01-22
+published: true
+category: gatsby
+---
+import Text from '../../src/components/Text'
+
+<Text>Adding env variables and accessing them in Gatsby is easier than you think! We start in the gatsby-config.js file by creating a
+    activeEnv check for which mode we are working in via the process.env global variable which is available via node in our Gatsby project.  </Text>
+
+<Text>We then require the dotenv library which is also available to use via node, and set the config path to the activeEnv variable. </Text>
+
+```js
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development" || "production"
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
+module.exports = {
+    ....
+}
+```
+
+<Text>We can then create our .env files in our projects root. You can set env variables for both development and production environments. </Text>
+
+```bash
+.env.development
+.env.production
+```
+
+<Text>We now have access to our env variables in our gatsby-config.js file:</Text>
+
+```js
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development" || "production"
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
+module.exports = {
+    plugins: [
+        {
+        resolve: 'gatsby-source-something-cool',
+        options: {
+          projectId: process.env.MY_ENV_VARIABLE,
+
+        }
+    ]
+}
+```
