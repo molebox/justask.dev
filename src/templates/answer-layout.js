@@ -47,6 +47,23 @@ const DateAndCategory = styled.div`
   }
 `;
 
+const Author = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  text-transform: uppercase;
+
+
+  // Desktop
+  @media (min-width: 48em) {
+    font-size: 1.2em;
+    text-transform: uppercase;
+  }
+
+
+`;
+
 const Links = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -60,7 +77,7 @@ export default ({ data, pageContext }) => {
     body,
     fields: { editLink }
   } = data.mdx;
-  const { title, date, category } = frontmatter;
+  const { title, date, category, author } = frontmatter;
   const { previous, next } = pageContext;
   return (
     <Layout>
@@ -109,6 +126,10 @@ export default ({ data, pageContext }) => {
           </DateAndCategory>
         </IntroText>
         <MDXRenderer sx={{ height: "100vh" }}>{body}</MDXRenderer>
+        <Author sx={{
+                fontFamily: "body",
+                fontWeight: "bold"
+        }}>Author: {author}</Author>
         <Links>
           {previous === false ? null : (
             <React.Fragment>
@@ -143,6 +164,7 @@ export const query = graphql`
         title
         date(formatString: "YYYY MMMM Do")
         category
+        author
       }
       body
       excerpt
