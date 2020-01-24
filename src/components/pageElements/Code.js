@@ -1,12 +1,16 @@
-import React from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/nightOwl";
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
-import styled from "@emotion/styled";
-import { copyToClipboard } from "../../utils/copy-to-clipboard";
+import styled from '@emotion/styled';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import theme from 'prism-react-renderer/themes/nightOwl';
+import React from 'react';
+import {
+  LiveEditor,
+  LiveError,
+  LivePreview,
+  LiveProvider,
+} from 'react-live';
+import { copyToClipboard } from '../../utils/copy-to-clipboard';
 
 const Pre = styled.pre`
-  position: relative;
   text-align: left;
   margin: 1em;
   padding: 1.5em;
@@ -30,7 +34,7 @@ const LineNo = styled.span`
 
 const CopyCode = styled.button`
   position: absolute;
-  right: 0.25rem;
+  right: 1.25rem;
   top: 0.5rem;
   border: 0;
   border-radius: 3px;
@@ -45,7 +49,7 @@ const CopyCode = styled.button`
 `;
 
 export const Code = ({ codeString, language, ...props }) => {
-  if (props["react-live"]) {
+  if (props['react-live']) {
     return (
       <LiveProvider code={codeString} theme={theme}>
         <LiveEditor />
@@ -64,7 +68,13 @@ export const Code = ({ codeString, language, ...props }) => {
       language={language}
       theme={theme}
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      {({
+        className,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
+      }) => (
         <Pre className={className} style={style}>
           <CopyCode onClick={handleClick}>Copy</CopyCode>
           {tokens.map((line, i) => (
