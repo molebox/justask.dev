@@ -2,7 +2,7 @@
 
 The motivation behind this website is to provide an easy way for developers new and old to search for those annoying things we all forget.
 
-If you have been googling for an answer to a question and found it then please consider sharing it here so that others might benifit. The goal of this site is growth through community contributions.
+If you have been googling for an answer to a question and found it then please consider sharing it here so that others might benefit. The goal of this site is growth through community contributions.
 
 To submit a PR:
 
