@@ -72,7 +72,7 @@ export default () => {
         </Paragraph>
         <Paragraph>
           If you have been googling for an answer to a question and found it
-          then please consider sharing it here so that others might benifit. The
+          then please consider sharing it here so that others might benefit. The
           goal of this site is growth through community contributions.
         </Paragraph>
         <Paragraph>
